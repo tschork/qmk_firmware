@@ -4,12 +4,13 @@
 Swiss french layout, derived from a TKL keyboard.
 Feel free to get inspiration from this, I take no responsabilities for hair loss if debugging this thing.
 
-todo:  make the MO sitches to TG and use the leds as layer indicator.
+todo: * convert the MO switches to TG and use the leds as a layer indicator.
         use the 2 leds like binary clocks (o is off, x is on)
             o o layer 0
             x o layer 1
             o x layer 2
             x x layer 3
+      * try to get a long press of a number to be the shifted character
 
 7.05.2020   enabling numlock at keyboard boot
             moved mouse keys 1 column to the right
@@ -36,8 +37,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //F keys and numbers
 	[1] = LAYOUT_plaid_mit(
 		KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC,
-		KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_NO, KC_NO, KC_HOME, KC_PGUP, KC_DEL,
-		KC_TRNS, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_MPRV, KC_END, KC_PGDN, KC_ENT,
+		KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_NO, KC_NO, KC_PGUP, KC_PGDN, KC_DEL,
+		KC_TRNS, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_MPRV, KC_HOME, KC_END, KC_ENT,
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_SPC, KC_NO, KC_MFFD, KC_VOLD, KC_VOLU, KC_MPLY
 	),
     //mouse emulation and wasd as arrows
