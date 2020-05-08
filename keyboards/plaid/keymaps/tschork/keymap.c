@@ -15,6 +15,9 @@ todo: * convert the MO switches to TG and use the leds as a layer indicator.
 7.05.2020   enabling numlock at keyboard boot
             moved mouse keys 1 column to the right
             commented layers, now to give a visual representation like the default keymap
+08.05.2020
+    enabled auto shift
+    enabled tap dance, double shift = caps lock
 */
 
 //force numlock to on on keyboard boot
@@ -25,13 +28,24 @@ void matrix_init_user(void) {
     }
 }
 
+//Tap Dance Declarations
+enum {
+  TD_CAPS_LOCK = 0
+};
+
+//Tap Dance Definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  //Tap once for left shift, twice for Caps Lock
+  [TD_CAPS_LOCK]  = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS)
+// Other declarations would go here, separated by commas, if you have them
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//base layer, qwertz
     [0] = LAYOUT_plaid_mit(
 		KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC,
 		KC_TAB, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_LBRC, KC_RBRC,
-		KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_SCLN, KC_QUOT, KC_BSLS, KC_SFTENT,
+		TD(TD_CAPS_LOCK)/*KC_LSFT*/, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_SCLN, KC_QUOT, KC_BSLS, KC_SFTENT,
 		KC_LCTL, KC_LGUI, KC_LALT, KC_RALT, MO(1), LT(3,KC_SPC), MO(2), KC_COMM, KC_DOT, KC_SLSH, KC_NUBS
 	),
     //F keys and numbers

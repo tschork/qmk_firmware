@@ -37,3 +37,6 @@ HD44780_ENABLE = no 		# Enable support for HD44780 based LCDs
 
 LAYOUTS = ortho_4x12 planck_mit
 LAYOUTS_HAS_RGB = no
+
+AUTO_SHIFT_ENABLE = yes
+TAP_DANCE_ENABLE = yes
