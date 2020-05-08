@@ -21,7 +21,7 @@ todo: * convert the MO switches to TG and use the leds as a layer indicator.
     enabled tap dance, double shift = caps lock
 */
 
-//force numlock to on on keyboard boot
+//force numlock to ON on keyboard boot
 void matrix_init_user(void) {
     if (!(host_keyboard_leds() & (1 << USB_LED_NUM_LOCK))) {
         register_code(KC_NUMLOCK);
@@ -38,7 +38,6 @@ enum {
 qk_tap_dance_action_t tap_dance_actions[] = {
   //Tap once for left shift, twice for Caps Lock
   [TD_CAPS_LOCK]  = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS)
-// Other declarations would go here, separated by commas, if you have them
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
