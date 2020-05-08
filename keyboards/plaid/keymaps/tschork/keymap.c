@@ -10,11 +10,12 @@ todo: * convert the MO switches to TG and use the leds as a layer indicator.
             x o layer 1
             o x layer 2
             x x layer 3
-      * try to get a long press of a number to be the shifted character
 
-7.05.2020   enabling numlock at keyboard boot
-            moved mouse keys 1 column to the right
-            commented layers, now to give a visual representation like the default keymap
+7.05.2020
+    enabling numlock at keyboard boot
+    moved mouse keys 1 column to the right
+    commented layers, now to give a visual representation like the default keymap
+
 08.05.2020
     enabled auto shift
     enabled tap dance, double shift = caps lock
