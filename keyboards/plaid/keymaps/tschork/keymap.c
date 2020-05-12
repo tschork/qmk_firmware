@@ -21,6 +21,13 @@ Feel free to get inspiration from this, I take no responsabilities for hair loss
 11.05.2020
     altGR + backspace = delete
     tap dancing on enter => tab
+
+12.05.2020
+    Tap dancing is now as such:
+        enter   => tab
+        control => F5
+        <       => F12
+        shift   => caps lock
 */
 
 //force numlock to ON on keyboard boot
@@ -67,7 +74,7 @@ enum {
 qk_tap_dance_action_t tap_dance_actions[] = {
   //Tap once for left shift, twice for Caps Lock
   [TD_CAPS_LOCK]  = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS)
-  ,[TD_F5] = ACTION_TAP_DANCE_DOUBLE(KC_SLSH, KC_F5)
+  ,[TD_F5] = ACTION_TAP_DANCE_DOUBLE(KC_LCTL, KC_F5)
   ,[TD_F12] = ACTION_TAP_DANCE_DOUBLE(KC_NUBS, KC_F12)
   ,[TD_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_ENTER, KC_TAB)
 };
@@ -77,21 +84,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTZ] = LAYOUT_plaid_mit(
 		KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC,
 		KC_TAB, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_LBRC, KC_RBRC,
-		TD(TD_CAPS_LOCK), KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_SCLN, KC_QUOT, KC_BSLS, TD(TD_TAB),
-		KC_LCTL, KC_LGUI, KC_LALT, KC_RALT, OSL(1), LT(3,KC_SPC), OSL(2), KC_COMM, KC_DOT, TD(TD_F5), TD(TD_F12)
+		TD(TD_CAPS_LOCK), KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_SCLN, KC_QUOT, KC_BSLS, KC_ENTER,
+		TD(TD_F5), KC_LGUI, KC_LALT, KC_RALT, OSL(1), LT(3,KC_SPC), OSL(2), KC_COMM, KC_DOT, KC_SLSH, TD(TD_F12)
 	),
     //F keys and numbers
 	[_NBR] = LAYOUT_plaid_mit(
 		KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC,
 		KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_NO, KC_NO, KC_PGUP, KC_PGDN, KC_NO,
-		KC_TRNS, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_MPRV, KC_HOME, KC_END, TD(TD_TAB),
+		KC_TRNS, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_MPRV, KC_HOME, KC_END, KC_ENTER,
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_SPC, KC_NO, KC_MFFD, KC_VOLD, KC_VOLU, KC_MPLY
 	),
     //mouse emulation and wasd as arrows
 	[_MOUSE] = LAYOUT_plaid_mit(
 		KC_ESC, KC_HOME, KC_UP, KC_END, KC_PGUP, KC_NO, KC_NO, KC_NO, KC_MS_U, KC_MINS, KC_EQL, KC_BSPC,
 		KC_TRNS, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_NO, KC_NO, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN3, KC_NO,
-		KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_BTN1, KC_MPRV, KC_BTN2, KC_NO, TD(TD_TAB),
+		KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_BTN1, KC_MPRV, KC_BTN2, KC_NO, KC_ENTER,
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_SPC, KC_NO, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
 	),
     //wasd as arrows and numeric keypad
