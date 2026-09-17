@@ -18,7 +18,17 @@
     "features": {
         "bootmagic": true,
         "mousekey": false,
-        "extrakey": true
+        "extrakey": true,
+        "encoder": true
+    },
+    "encoder": {
+        "rotary": [
+            {
+                "pin_a": "B5",
+                "pin_b": "B6",
+                "resolution": 4
+            }
+        ]
     },
     "qmk": {
         "locking": {
